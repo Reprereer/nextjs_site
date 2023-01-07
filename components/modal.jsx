@@ -1,6 +1,7 @@
 import Modal from 'react-modal'
 import { useState } from 'react'
 
+//Modal自体のオーバーレイとコンテンツの表示についての設定
 const customStyles = {
     overlay: {
         position: "fixed",
@@ -28,6 +29,7 @@ const customStyles = {
 
 Modal.setAppElement('#__next')
 
+//React-modalを用いたModalメニューの実装.ポップアップウィンドウ的なやつ
 const ModalMenu = () => {
     const [modalIsOpen, setIsOpen] = useState(false)
 
@@ -43,9 +45,10 @@ const ModalMenu = () => {
         setIsOpen(false)
     }
 
+//buttonの設定はCSSで行う
     return (
         <>
-        <button onClick={openModal}>Licence</button>
+        <button onClick={openModal}>Licence</button> 
         <Modal
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}

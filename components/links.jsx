@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+//アイコン押したらリンクに飛ぶ
 const Links = () => {
     return (
         <section>

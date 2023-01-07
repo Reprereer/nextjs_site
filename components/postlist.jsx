@@ -3,6 +3,7 @@ import Date from '../components/date'
 import Link from 'next/link'
 import Youtube from 'react-youtube'
 
+//投稿された記事のタイトル、日時をリスティングする
 export default function PostList({ allPostsData }) {
     return (
         <>

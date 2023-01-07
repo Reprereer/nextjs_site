@@ -1,5 +1,6 @@
 import ModalMenu from './modal'
 
+//画面下部。コピーライトやライセンス表示ボタンを置く
 const Footer = () => {
     return (
         <footer>

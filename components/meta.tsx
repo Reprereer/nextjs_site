@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+//メタデータを設定する
 const Meta = () => {
     return (
         <Head>

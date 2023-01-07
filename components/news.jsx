@@ -1,3 +1,4 @@
+//News欄を追加する.jsonの読み込みを検討予定
 const News = () => {
     return (
         <section>

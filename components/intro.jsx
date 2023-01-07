@@ -1,3 +1,4 @@
+//タイトル部分
 const Intro = () => {
     return (
       <section>

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { slide as Menu } from 'react-burger-menu'
 
+//React-burger-menuを用いたハンバーガーメニュー
 export default props => {
     return (
         <Menu {...props}>

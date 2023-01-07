@@ -3,6 +3,7 @@ import Date from '../components/date'
 import Link from 'next/link'
 import Youtube from 'react-youtube'
 
+//root/musicフォルダにあるマークダウンからYoutube埋め込みを含むリストを作成する
 export default function MusicList({ allPostsData }) {
     return (
         <>

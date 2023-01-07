@@ -1,3 +1,4 @@
+//自分が行っているプロジェクトの概要を2カラムで説明する
 const Projects = () => {
     return (
         <section>

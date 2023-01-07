@@ -1,3 +1,4 @@
+//サイトメッセージのための場所
 const Message = () => {
     return (
         <section>

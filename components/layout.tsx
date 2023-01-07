@@ -7,6 +7,7 @@ type Props = {
     children: React.ReactNode
 }
 
+//全体に影響するレイアウト
 const Layout = ({home, children}: Props) => {
     return (
         <>
@@ -14,7 +15,7 @@ const Layout = ({home, children}: Props) => {
             <Menu width={250} />
             <div>
                 <main>{children}</main>
-                {!home && (
+                {!home && (  //PropsでHomeかどうかを判別するインラインif文
                     <div>
                         <Link href='/'>Back To Home</Link>
                     </div>
