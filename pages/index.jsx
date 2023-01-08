@@ -2,19 +2,22 @@ import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
 import { motion } from 'framer-motion' 
 import Intro from '../components/intro'
 import Message from '../components/message'
-import News from '../components/news'
 import Projects from '../components/projects'
 import Githubs from '../components/github'
 import Links from '../components/links'
 import Footer from '../components/footer'
+import styles from '../styles/Home.module.css'
+import fsPromises from 'fs/promises'
+import path from 'path'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home( props ) {
+  const newsLists = props.newsLists
   return (
   <>
     <Layout home>
@@ -32,7 +35,12 @@ export default function Home() {
       >
         <Intro />
         <Message />
-        <News />
+        <h2>News</h2>
+        {newsLists.map(post =>
+          <div key={post.id}>
+            {post.date} {post.title}
+          </div>
+        )}
         <Projects />
         <Githubs />
         <Links />
@@ -41,4 +49,15 @@ export default function Home() {
     </Layout>
   </>
   )
+}
+
+export const getStaticProps = async() => {
+  const filePath = path.join(process.cwd(), 'news.json')
+
+  const data = await fsPromises.readFile(filePath)
+  const objectData = JSON.parse(data)
+
+  return {
+    props: objectData
+  }
 }
