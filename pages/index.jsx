@@ -38,7 +38,9 @@ export default function Home( props ) {
         <h2>News</h2>
         {newsLists.map(post =>
           <div key={post.id}>
-            {post.date} {post.title}
+            {post.date} {post.path=="home" && (<Link href='/'>{post.title}</Link>)}
+                        {post.path=="music" && (<Link href='/music'>{post.title}</Link>)}
+                        {post.path=="blog" && (<Link href='/blog'>{post.title}</Link>)}     
           </div>
         )}
         <Projects />

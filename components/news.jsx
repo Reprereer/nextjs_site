@@ -1,11 +1,27 @@
+import Date from './date'
+import Link from 'next/link'
+
 //News欄を追加する.jsonの読み込みを検討予定
-const News = () => {
+const News = ({props}) => {
+    const newsLists = props.newsLists
     return (
         <section>
             <h2>News</h2>
             <ul>
-                <p>2022/11/04 サイトをVercelに移行しました</p>
-                <p>2022/11/01 サイトを公開しました</p>
+                {newsLists.map(({ id, date, title, path }) => (
+                    <li key={id}>
+                        {path && (
+                        <Link href={path}>{title}</Link>
+                        )}
+                        {!path && (
+                            {title}
+                        )}
+                        <br/>
+                        <small>
+                            <Date dateString={date} />
+                        </small>
+                    </li>
+                ))}
             </ul>
         </section>
     )

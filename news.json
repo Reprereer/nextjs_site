@@ -4,19 +4,19 @@
             "id": 1,
             "title": "サイトを公開しました",
             "date": "2022/11/01",
-            "path": null
+            "path": "home"
         },
         {
             "id": 2,
             "title": "サイトをVercelに移行しました",
             "date": "2022/11/04",
-            "path": "/blog"
+            "path": "blog"
         },
         {
             "id": 3,
             "title": "サイトを作り直しました",
             "date": "2023/01/08",
-            "path": "/music"
+            "path": "music"
         }
     ]
 }
