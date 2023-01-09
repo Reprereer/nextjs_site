@@ -10,13 +10,13 @@
             "id": 2,
             "title": "サイトをVercelに移行しました",
             "date": "2022/11/04",
-            "path": "blog"
+            "path": "home"
         },
         {
             "id": 3,
             "title": "サイトを作り直しました",
             "date": "2023/01/08",
-            "path": "music"
+            "path": "home"
         }
     ]
 }
