@@ -9,35 +9,35 @@ export const breakpoint = {
 
     //スマホサイズ
     ss: (...args) => css`
-        @media (max-width: 375px) {
+        @media (min-width: 375px) {
             ${css(...args)}
         }
     `,
 
     //小さめタブレットサイズ
     sm: (...args) => css`
-      @media (max-width: 640px) {
+      @media (min-width: 640px) {
         ${css(...args)}
       }
     `,
 
     //タブレットサイズ
     md: (...args) => css`
-      @media (max-width: 768px) {
+      @media (min-width: 768px) {
         ${css(...args)}
       }
     `,
 
     //普通PCサイズ
     lg: (...args) => css`
-      @media (max-width: 1024px) {
+      @media (min-width: 1024px) {
         ${css(...args)}
       }
     `,
 
     //最大サイズ
     xl: (...args) => css`
-      @media (max-width: 1280px) {
+      @media (min-width: 1280px) {
         ${css(...args)}
       }
     `,

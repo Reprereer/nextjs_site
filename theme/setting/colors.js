@@ -3,6 +3,9 @@ export const colors = {
     black: '#000',
     white: '#fff',
     yellow: '#ff0',
+    blue: '#00f',
+    red: '#f00',
+    green: '#0f0',
 
     //テーマカラー
     primary: '#FFF9F7',
