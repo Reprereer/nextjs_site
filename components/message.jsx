@@ -49,7 +49,7 @@ export const StyledHeadline = styled.h2`
 export const StyledMessage = styled.h3`
     ${({ theme }) => theme.breakpoint.media.base`
         color: ${theme.colors.black};
-        text-align: left;
+        text-align: center;
         font-size: ${theme.fonts.size.base};
         overflow-wrap: break-word;
         padding-bottom: 1%;

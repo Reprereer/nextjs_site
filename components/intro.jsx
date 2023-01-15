@@ -54,7 +54,32 @@ const StyledTitleBox = styled.div`
   ${({ theme }) => theme.breakpoint.media.base`
     display: flex;
     gap: 10%;
-    padding: 30px;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 4%;
+    align-items: center;
+    grid-area: content;
+    justify-content: center;
+    flex-direction: column;
+  `}
+  ${({ theme }) => theme.breakpoint.media.ss`
+    display: flex;
+    gap: 10%;
+    padding-bottom: 1%;
+    padding-left: 4%;
+    padding-right: 5%;
+    align-items: center;
+    grid-area: content;
+    justify-content: center;
+    flex-direction: column;
+  `}
+  ${({ theme }) => theme.breakpoint.media.sm`
+    display: flex;
+    flex: auto;
+    gap: 10%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 6%;
     align-items: center;
     grid-area: content;
     justify-content: center;
@@ -62,11 +87,32 @@ const StyledTitleBox = styled.div`
   `}
   ${({ theme }) => theme.breakpoint.media.md`
     display: flex;
-    gap: 5%;
-    padding-top: 1%;
+    flex: auto;
+    padding-bottom: 1%;
+    padding-left: 9%;
+    padding-right: 10%;
+    align-items: center;
+    grid-area: content;
+    justify-content: center;
+    flex-direction: row;
+  `}
+  ${({theme}) => theme.breakpoint.media.lg`
+    display: flex;
+    flex: auto;
     padding-bottom: 1%;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 11%;
+    align-items: center;
+    grid-area: content;
+    justify-content: center;
+    flex-direction: row;
+  `}
+  ${({theme}) => theme.breakpoint.media.xl`
+    display: flex;
+    flex: auto;
+    padding-bottom: 1%;
+    padding-left: 11%;
+    padding-right: 12%;
     align-items: center;
     grid-area: content;
     justify-content: center;
@@ -77,8 +123,12 @@ const StyledTitleBox = styled.div`
 const StyledMessage = styled.h4`
   ${({ theme }) => theme.breakpoint.media.base`
     color: ${theme.colors.black};
+    text-align: center;
+    font-size: ${theme.fonts.size.base};
+  `}
+  ${({ theme }) => theme.breakpoint.media.md`
+    color: ${theme.colors.black};
     text-align: left;
     font-size: ${theme.fonts.size.base};
-    overflow-wrap: break-word;
   `}
 `
