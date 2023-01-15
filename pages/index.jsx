@@ -8,7 +8,7 @@ import Projects from '../components/projects'
 import Githubs from '../components/github'
 import Links from '../components/links'
 import Footer from '../components/footer'
-import styles from '../styles/Home.module.css'
+import styled from 'styled-components'
 import fsPromises from 'fs/promises'
 import path from 'path'
 import Link from 'next/link'
@@ -33,13 +33,13 @@ export default function Home( props ) {
       >
         <Intro />
         <Message />
-        <h2>News</h2>
+        <StyledHeadline>News</StyledHeadline>
         {newsLists.map(post =>
-          <div key={post.id}>
-            {post.date} {post.path=="home" && (<Link href='/'>{post.title}</Link>)}
-                        {post.path=="music" && (<Link href='/music'>{post.title}</Link>)}
-                        {post.path=="blog" && (<Link href='/blog'>{post.title}</Link>)}     
-          </div>
+          <StyledNews key={post.id}>
+            {<h4>{post.date}</h4>}  {post.path=="home" && (<Link href='/'>{post.title}</Link>)}
+                                    {post.path=="music" && (<Link href='/music'>{post.title}</Link>)}
+                                    {post.path=="blog" && (<Link href='/blog'>{post.title}</Link>)}
+          </StyledNews>
         )}
         <Projects />
         <Githubs />
@@ -61,3 +61,48 @@ export const getStaticProps = async() => {
     props: objectData
   }
 }
+
+export const StyledHeadline = styled.h2`
+    ${({ theme }) => theme.breakpoint.media.base`
+        color: ${theme.colors.black};
+        text-align: center;
+        font-size: ${theme.fonts.size.xl};
+    `}
+    ${({ theme }) => theme.breakpoint.media.ss`
+        color: ${theme.colors.black};
+        text-align: center;
+        font-size: ${theme.fonts.size.xl};
+    `}
+    ${({theme}) => theme.breakpoint.media.sm`
+        color: ${theme.colors.black};
+        text-align: center;
+        font-size: ${theme.fonts.size.xl};
+    `}
+    ${({theme}) => theme.breakpoint.media.md`
+        color: ${theme.colors.black};
+        text-align: center;
+        font-size: ${theme.fonts.size.xl2};
+    `}
+    ${({theme}) => theme.breakpoint.media.lg`
+        color: ${theme.colors.black};
+        text-align: center;
+        font-size: ${theme.fonts.size.xl3};
+    `}
+    ${({theme}) => theme.breakpoint.media.xl`
+        color: ${theme.colors.black};
+        text-align: center;
+        font-size: ${theme.fonts.size.xl3};
+    `}
+`
+
+export const StyledNews = styled.div`
+  display: flex;
+  flex: auto;
+  align-items: center;
+  grid-area: content;
+  justify-content: center;
+  column-gap: 10px;
+  background-color: #ffffff;
+  margin-left: 4%;
+  margin-right: 5%;
+`
