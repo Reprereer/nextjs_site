@@ -20,28 +20,18 @@ export const StyledHeadline = styled.h2`
         font-size: ${theme.fonts.size.xl};
     `}
     ${({ theme }) => theme.breakpoint.media.ss`
-        color: ${theme.colors.yellow};
-        text-align: center;
         font-size: ${theme.fonts.size.xl};
     `}
     ${({theme}) => theme.breakpoint.media.sm`
-        color: ${theme.colors.blue};
-        text-align: center;
         font-size: ${theme.fonts.size.xl2};
     `}
     ${({theme}) => theme.breakpoint.media.md`
-        color: ${theme.colors.primary};
-        text-align: center;
         font-size: ${theme.fonts.size.xl3};
     `}
     ${({theme}) => theme.breakpoint.media.lg`
-        color: ${theme.colors.red};
-        text-align: center;
         font-size: ${theme.fonts.size.xl4};
     `}
     ${({theme}) => theme.breakpoint.media.xl`
-        color: ${theme.colors.green};
-        text-align: center;
         font-size: ${theme.fonts.size.xl5};
     `}
 `
