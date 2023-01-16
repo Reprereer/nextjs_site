@@ -68,29 +68,13 @@ export const StyledHeadline = styled.h2`
         text-align: center;
         font-size: ${theme.fonts.size.xl};
     `}
-    ${({ theme }) => theme.breakpoint.media.ss`
-        color: ${theme.colors.black};
-        text-align: center;
-        font-size: ${theme.fonts.size.xl};
-    `}
-    ${({theme}) => theme.breakpoint.media.sm`
-        color: ${theme.colors.black};
-        text-align: center;
-        font-size: ${theme.fonts.size.xl};
-    `}
     ${({theme}) => theme.breakpoint.media.md`
-        color: ${theme.colors.black};
-        text-align: center;
         font-size: ${theme.fonts.size.xl2};
     `}
     ${({theme}) => theme.breakpoint.media.lg`
-        color: ${theme.colors.black};
-        text-align: center;
         font-size: ${theme.fonts.size.xl3};
     `}
     ${({theme}) => theme.breakpoint.media.xl`
-        color: ${theme.colors.black};
-        text-align: center;
         font-size: ${theme.fonts.size.xl3};
     `}
 `
