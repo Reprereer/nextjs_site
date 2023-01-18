@@ -44,6 +44,7 @@ export const StyledLinker = styled.div`
         flex-direction: column;
         column-gap: 5%;
         row-gap: 5%;
+        padding-bottom: 4%;
     `}
     ${({ theme }) => theme.breakpoint.media.md`
         flex-direction: row;
