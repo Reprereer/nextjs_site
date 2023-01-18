@@ -12,4 +12,12 @@ export default css`
         overflow-x: hidden;
         width: 100%;
     }
+    footer {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        flex-direction: column;
+    }
 `
