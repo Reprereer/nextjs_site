@@ -1,6 +1,8 @@
 import Meta from './meta'
 import Menu from './menu'
 import Link from 'next/link'
+import styles from '../styles/Layout.module.css'
+import { useRouter } from 'next/router'
 
 type Props = {
     home?: boolean
@@ -9,6 +11,7 @@ type Props = {
 
 //全体に影響するレイアウト
 const Layout = ({home, children}: Props) => {
+    const router = useRouter();
     return (
         <>
             <Meta />
@@ -17,7 +20,7 @@ const Layout = ({home, children}: Props) => {
                 <main>{children}</main>
                 {!home && (  //PropsでHomeかどうかを判別するインラインif文
                     <div>
-                        <Link href='/'>Back To Home</Link>
+                        <button onClick={() => router.push("/")} className={styles.btnborderopen}>Back to Home</button>
                     </div>
                 )}
             </div>
