@@ -1,6 +1,8 @@
 import Image from 'next/image'
-import styled from 'styled-components'
 import Link from 'next/link'
+import StyledHeadline from './styledComponents/styledheadline'
+import StyledLinker from './styledComponents/styledlinker'
+import StyledImage from './styledComponents/styledimage'
 //アイコン押したらリンクに飛ぶ
 const Links = () => {
     return (
@@ -19,56 +21,6 @@ const Links = () => {
 }
 
 export default Links
-
-export const StyledHeadline = styled.h2`
-    ${({ theme }) => theme.breakpoint.media.base`
-        color: ${theme.colors.black};
-        text-align: center;
-        font-size: ${theme.fonts.size.xl};
-    `}
-    ${({theme}) => theme.breakpoint.media.md`
-        font-size: ${theme.fonts.size.xl2};
-    `}
-    ${({theme}) => theme.breakpoint.media.lg`
-        font-size: ${theme.fonts.size.xl3};
-    `}
-    ${({theme}) => theme.breakpoint.media.xl`
-        font-size: ${theme.fonts.size.xl3};
-    `}
-`
-export const StyledLinker = styled.div`
-    ${({ theme }) => theme.breakpoint.media.base`
-        display: flex;
-        color:${theme.colors.black};
-        align-items:center;
-        flex-direction: column;
-        column-gap: 5%;
-        row-gap: 5%;
-        padding-bottom: 4%;
-    `}
-    ${({ theme }) => theme.breakpoint.media.md`
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 5%;
-    `}
-`
-export const StyledImage = styled.div`
-    ${({ theme }) => theme.breakpoint.media.base`
-    `}
-    ${({ theme }) => theme.breakpoint.media.ss`
-        transform: scale(1.25)
-    `}
-    ${({ theme }) => theme.breakpoint.media.md`
-        transform: scale(1.25)
-    `}
-    ${({ theme }) => theme.breakpoint.media.lg`
-        transform: scale(1.375)
-    `}
-    ${({ theme }) => theme.breakpoint.media.xl`
-        transform: scale(1.5)
-    `}
-`
 
 export const StyledNextImage = ({src, alt, width, height})=>{
     return(

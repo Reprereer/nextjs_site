@@ -3,6 +3,8 @@ import Date from '../components/date'
 import Link from 'next/link'
 import Youtube from 'react-youtube'
 import styled from 'styled-components'
+import StyledPostlist from './styledComponents/styledpostlist'
+import StyledPosts from './styledComponents/styledposts'
 
 //投稿された記事のタイトル、日時をリスティングする
 export default function PostList({ allPostsData }) {
@@ -22,17 +24,3 @@ export default function PostList({ allPostsData }) {
         </>
     )
 }
-
-export const StyledPostlist = styled.div`
-    ${({ theme }) => theme.breakpoint.media.base`
-        text-align: center;
-        background: #ffffff;
-        margin-right: 20px;
-    `}
-`
-
-export const StyledPosts = styled.div`
-    ${({ theme }) => theme.breakpoint.media.base`
-        padding-bottom: 1%;
-    `}
-`

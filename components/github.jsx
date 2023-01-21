@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import StyledText from './styledComponents/styledtext'
+import StyledHeadline from './styledComponents/styledheadline'
 //githubがあるって書いてあるだけ
 const Githubs = () => {
     return (
@@ -12,32 +13,3 @@ const Githubs = () => {
 }
 
 export default Githubs;
-
-export const StyledHeadline = styled.h2`
-    ${({ theme }) => theme.breakpoint.media.base`
-        color: ${theme.colors.black};
-        text-align: center;
-        font-size: ${theme.fonts.size.xl};
-    `}
-    ${({theme}) => theme.breakpoint.media.md`
-        font-size: ${theme.fonts.size.xl2};
-    `}
-    ${({theme}) => theme.breakpoint.media.lg`
-        font-size: ${theme.fonts.size.xl3};
-    `}
-    ${({theme}) => theme.breakpoint.media.xl`
-        font-size: ${theme.fonts.size.xl3};
-    `}
-`
-
-export const StyledText = styled.h4`
-    ${({ theme }) => theme.breakpoint.media.base`
-        color: ${theme.colors.black};
-        text-align: center;
-        font-size: ${theme.fonts.size.base};
-        overflow-wrap: break-word;
-        padding-bottom: 1%;
-        padding-left: 7%;
-        padding-right: 8%;
-    `}
-`
