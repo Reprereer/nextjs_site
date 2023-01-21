@@ -8,10 +8,11 @@ import Projects from '../components/projects'
 import Githubs from '../components/github'
 import Links from '../components/links'
 import Footer from '../components/footer'
-import styled from 'styled-components'
 import fsPromises from 'fs/promises'
 import path from 'path'
 import Link from 'next/link'
+import StyledHeadline from '../components/styledComponents/styledheadline'
+import StyledNews from '../components/styledComponents/stylednews'
 
 
 export default function Home( props ) {
@@ -61,32 +62,3 @@ export const getStaticProps = async() => {
     props: objectData
   }
 }
-
-export const StyledHeadline = styled.h2`
-    ${({ theme }) => theme.breakpoint.media.base`
-        color: ${theme.colors.black};
-        text-align: center;
-        font-size: ${theme.fonts.size.xl};
-    `}
-    ${({theme}) => theme.breakpoint.media.md`
-        font-size: ${theme.fonts.size.xl2};
-    `}
-    ${({theme}) => theme.breakpoint.media.lg`
-        font-size: ${theme.fonts.size.xl3};
-    `}
-    ${({theme}) => theme.breakpoint.media.xl`
-        font-size: ${theme.fonts.size.xl3};
-    `}
-`
-
-export const StyledNews = styled.div`
-  display: flex;
-  flex: auto;
-  align-items: center;
-  grid-area: content;
-  justify-content: center;
-  column-gap: 10px;
-  background-color: #ffffff;
-  margin-left: 4%;
-  margin-right: 5%;
-`
