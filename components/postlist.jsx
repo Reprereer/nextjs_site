@@ -1,8 +1,6 @@
 import React from 'react'
 import Date from '../components/date'
 import Link from 'next/link'
-import Youtube from 'react-youtube'
-import styled from 'styled-components'
 import StyledPostlist from './styledComponents/styledpostlist'
 import StyledPosts from './styledComponents/styledposts'
 

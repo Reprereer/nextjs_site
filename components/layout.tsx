@@ -1,6 +1,5 @@
 import Meta from './meta'
 import Menu from './menu'
-import Link from 'next/link'
 import styles from '../styles/Layout.module.css'
 import { useRouter } from 'next/router'
 

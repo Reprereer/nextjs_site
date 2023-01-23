@@ -14,7 +14,7 @@ import Link from 'next/link'
 import StyledHeadline from '../components/styledComponents/styledheadline'
 import StyledNews from '../components/styledComponents/stylednews'
 
-
+//トップページ
 export default function Home( props ) {
   const newsLists = props.newsLists
   return (

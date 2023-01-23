@@ -3,6 +3,7 @@ import Link from 'next/link'
 import StyledHeadline from './styledComponents/styledheadline'
 import StyledLinker from './styledComponents/styledlinker'
 import StyledImage from './styledComponents/styledimage'
+
 //アイコン押したらリンクに飛ぶ
 const Links = () => {
     return (

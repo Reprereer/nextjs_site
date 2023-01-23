@@ -1,6 +1,7 @@
 import { useMail } from './hooks/useMail'
 import Layout from '../components/layout'
 
+//問い合わせページ
 function Contact() {
     const { setName, setMessage, send } = useMail()
     return (

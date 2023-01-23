@@ -1,5 +1,6 @@
 import StyledText from './styledComponents/styledtext'
 import StyledHeadline from './styledComponents/styledheadline'
+
 //githubがあるって書いてあるだけ
 const Githubs = () => {
     return (

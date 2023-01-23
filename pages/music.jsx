@@ -4,7 +4,8 @@ import Head from 'next/head'
 import { getSortedMusicsData } from '../lib/musicPosts'
 import MusicList from '../components/musiclist'
 
-function Blog({allMusicsData}) {
+//Musicページ
+function Music({allMusicsData}) {
     return (
         <>
         <Layout>
@@ -22,7 +23,7 @@ function Blog({allMusicsData}) {
     )
 }
 
-export default Blog
+export default Music
 
 export async function getStaticProps() {
     const allMusicsData = getSortedMusicsData()

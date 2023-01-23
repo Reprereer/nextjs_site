@@ -5,6 +5,7 @@ import { getSortedPostsData } from '../lib/posts'
 import PostList from '../components/postlist'
 import StyledTitle from '../components/styledComponents/styledtitle'
 
+//Blogページ
 function Blog({allPostsData}) {
     return (
         <>
