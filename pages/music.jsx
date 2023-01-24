@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Head from 'next/head'
 import { getSortedMusicsData } from '../lib/musicPosts'
 import MusicList from '../components/musiclist'
+import StyledHeadline from '../components/styledComponents/styledheadline'
 
 //Musicページ
 function Music({allMusicsData}) {
@@ -16,7 +17,7 @@ function Music({allMusicsData}) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             
-            <h1>Music</h1>
+            <StyledHeadline>Music</StyledHeadline>
             <MusicList allPostsData={allMusicsData} />
         </Layout>
         </>
