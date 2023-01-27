@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 export const useMail = () => {
     const [name, setName] = useState('')
+    const [emailaddress, setEmailaddress ] = useState('')
     const [message, setMessage] = useState('')
 
     const send = async () => {
@@ -11,6 +12,9 @@ export const useMail = () => {
         名前
         ${name}
 
+        アドレス
+        ${emailaddress}
+
         お問い合わせ内容
         ${message}
         `,
@@ -18,6 +22,6 @@ export const useMail = () => {
     }
 
     return {
-        setName, setMessage, send,
+        setName, setMessage, setEmailaddress, send,
     }
 }

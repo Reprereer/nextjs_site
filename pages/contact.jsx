@@ -7,7 +7,7 @@ import styles from '../styles/Modal.module.css'
 
 //問い合わせページ
 function Contact() {
-    const { setName, setMessage, send } = useMail()
+    const { setName, setMessage, setEmailaddress, send } = useMail()
     return (
         <>
         <Layout>
@@ -21,6 +21,8 @@ function Contact() {
         <StyledContact>
             Enter your Name.<br />
             <input type="text" onChange={(e) => setName(e.target.value)} /><br />
+            Enter your Email.<br/>
+            <input type="email" onChange={(e) => setEmailaddress(e.target.value)} /><br />
             Enter your Request.<br />
             <textarea onChange={(e) => setMessage(e.target.value)} /><br />
             <button type="button" onClick={send} className={styles.btnborderopen}>Send</button>

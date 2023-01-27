@@ -14,7 +14,7 @@ export default async (req, res) => {
   await transporter.sendMail({
     from: process.env.MAIL_USER,
     to: process.env.MAIL_USER,
-    subject: 'お問い合わせ',
+    subject: `お問い合わせ`,
     text: req.body,
   })
 
