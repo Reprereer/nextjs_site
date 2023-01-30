@@ -1,8 +1,12 @@
 import { css } from 'styled-components'
 
 export default css`
-    html,
+    html {
+        height: 100%;
+    }
+
     body {
+        height: 100%;
         background-color: #FFF9F7;
         color: black;
         text-rendering: optimizeLegibility;
@@ -12,6 +16,7 @@ export default css`
         overflow-x: hidden;
         width: 100%;
     }
+
     footer {
         background-color: #ffffff;
         display: flex;
@@ -19,5 +24,9 @@ export default css`
         align-items: center;
         padding: 10px;
         flex-direction: column;
+    }
+    
+    dev#root{
+        height: 100%;
     }
 `
