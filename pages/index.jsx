@@ -13,6 +13,7 @@ import path from 'path'
 import Link from 'next/link'
 import StyledHeadline from '../components/styledComponents/styledheadline'
 import StyledNews from '../components/styledComponents/stylednews'
+import ThreeSample from '../components/threesample'
 
 //トップページ
 export default function Home( props ) {
@@ -33,6 +34,7 @@ export default function Home( props ) {
         transition={{ ease: "easeOut", duration: 1 }}
       >
         <Intro />
+        <ThreeSample />
         <Message />
         <StyledHeadline>News</StyledHeadline>
         {newsLists.map(post =>
