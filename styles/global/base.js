@@ -3,6 +3,7 @@ import { css } from 'styled-components'
 export default css`
     html {
         height: 100%;
+        width: 100%;
     }
 
     body {
@@ -28,5 +29,6 @@ export default css`
     
     dev#root{
         height: 100%;
+        width: 100%;
     }
 `
