@@ -25,31 +25,15 @@ const Thing = () => {
     )
 }
 
-const Cloud = () => {
+const Cloud = ({ position, rotationZ}) => {
     const tempObject = useMemo(() => new Object3D(), [])
     const ref = useRef()
     const texture = useTexture({map:'/assets/images/smoke2.png'})
 
-    const particles = useMemo(() => {
-    const cloudParticles = []
-        for (let p = 0; p < 50; p++) {
-            const positionX = Math.random() * 800 - 400
-            const positionZ = Math.random() * 500 - 500
-            const rotationZ = Math.random() * 2 * Math.PI
-
-            cloudParticles.push({
-                positionX,
-                positionZ,
-                rotationZ,
-            })
-        }
-    return cloudParticles
-    },[])
-
-    
+    useFrame(() => (ref.current.rotation.z += 0.001 ))
 
     return (
-        <mesh ref={ref}>
+        <mesh position={position} ref={ref}>
             <planeBufferGeometry attach='geometry' args={[10, 10]} />
             <meshLambertMaterial
                 attach='material'
@@ -63,7 +47,21 @@ const Cloud = () => {
 }
 
 const ThreeSample = () => {
+    const cloudParticles = []
+        for (let p = 0; p < 50; p++) {
+            const positionX = Math.random() * 800 - 400
+            const positionZ = Math.random() * 500 - 500
+            const rotationZ = Math.random() * 2 * Math.PI
+    
+            cloudParticles.push({
+                positionX,
+                positionZ,
+                rotationZ,
+            })
+        }
+
     return (
+        <div style={{width: "50vw", height:"50vh"}}>
         <Canvas>
             <directionalLight
           color="#ff1100"
@@ -99,9 +97,12 @@ const ThreeSample = () => {
           decay={1.5}
         />
         <Suspense fallback={null}>
-          <Cloud />
+            {[...Array(40)].map((_) =>
+                <Cloud position={[Math.random()*2, Math.random()*2 , Math.random()*2]} rotationZ={Math.random()*Math.PI}/>
+            )}
         </Suspense>
         </Canvas>
+        </div>
     )
 }
 
