@@ -95,6 +95,9 @@ const ThreeSample = () => {
           distance={500}
           decay={1.5}
         />
+        <Html>
+            <div className={styles.title}>Fictionaire</div>
+        </Html>
         <Suspense fallback={null}>
             {[...Array(20)].map((_) =>
                 <Cloud position={[Math.random()*3, Math.random()*3 , Math.random()*2]} rotationZ={Math.random()*Math.PI}/>

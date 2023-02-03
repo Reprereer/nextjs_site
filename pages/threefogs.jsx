@@ -32,9 +32,25 @@ const Cloud = ({ position, rotationZ}) => {
 
     useFrame(() => (ref.current.rotation.z += 0.001 ))
 
+    const uniforms = {
+        time: {
+            type: 'f',
+            value: 0
+          },
+          tex: {
+            type: 't',
+            value: null
+          }
+        };
+    const num = 200;
+    const obj = null;
+
     return (
         <mesh position={position} ref={ref}>
-            <planeBufferGeometry attach='geometry' args={[10, 10]} />
+            <planeBufferGeometry
+                attach='geometry'
+                args={[10, 10]}
+            />
             <meshLambertMaterial
                 attach='material'
                 {...texture}
@@ -61,7 +77,7 @@ const ThreeSample = () => {
         }
 
     return (
-        <div style={{width: "50vw", height:"50vh"}}>
+        <div style={{width: "100vw", height:"100vh"}}>
         <Canvas>
             <directionalLight
           color="#ff1100"
@@ -97,8 +113,8 @@ const ThreeSample = () => {
           decay={1.5}
         />
         <Suspense fallback={null}>
-            {[...Array(40)].map((_) =>
-                <Cloud position={[Math.random()*2, Math.random()*2 , Math.random()*2]} rotationZ={Math.random()*Math.PI}/>
+            {[...Array(20)].map((_) =>
+                <Cloud position={[Math.random()*3, Math.random()*3 , Math.random()*2]} rotationZ={Math.random()*Math.PI}/>
             )}
         </Suspense>
         </Canvas>
