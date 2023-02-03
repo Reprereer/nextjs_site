@@ -8,7 +8,7 @@ export default css`
 
     body {
         height: 100%;
-        background-color: #FFF9F7;
+        background-color: #FFFFFF;
         color: black;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
