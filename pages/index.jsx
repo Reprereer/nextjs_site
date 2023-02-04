@@ -33,7 +33,6 @@ export default function Home( props ) {
         exit={{ opacity: 0 }}
         transition={{ ease: "easeOut", duration: 1 }}
       >
-        <Intro />
         <ThreeSample />
         <Message />
         <StyledHeadline>News</StyledHeadline>

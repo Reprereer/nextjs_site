@@ -1,34 +1,16 @@
-import * as THREE from 'three'
 import React, { Suspense, useRef, useMemo } from 'react'
-import { Canvas, useFrame, ThreeElements } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Object3D } from 'three'
-import { useTexture } from '@react-three/drei'
+import { useTexture, Text3D } from '@react-three/drei'
+import styles from '../styles/Three.module.css'
+import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json'
 
-const Thing = () => {
-    const ref = useRef()
-    useFrame(() => (ref.current.rotation.z += 0.01))
-    return (
-        <mesh
-            ref={ref}
-            onClick={e => console.log('click')}
-            onPointerOver={e => console.log('hover')}
-            onPointerOut={e => console.log('unhover')}
-        >
-            <planeBufferGeometry attach='geometry' args={[1, 1]} />
-            <meshBasicMaterial
-                attach='material'
-                color='hotpink'
-                opacity={0.5}
-                transparent
-            />
-        </mesh>
-    )
-}
-
+//smokeを作成する
 const Cloud = ({ position, rotationZ}) => {
     const tempObject = useMemo(() => new Object3D(), [])
     const ref = useRef()
     const texture = useTexture({map:'/assets/images/smoke2.png'})
+    const { viewport } = useThree()
 
     useFrame(() => (ref.current.rotation.z += 0.001 ))
 
@@ -62,6 +44,20 @@ const Cloud = ({ position, rotationZ}) => {
     )
 }
 
+const Texts = ({text, position}) => {
+    const { viewport } = useThree()
+    return (
+        <mesh scale={viewport.width/8}>
+            <Text3D position={position} font={threeFontJson}>
+                {text}
+                <meshNormalMaterial attach='material' color='#000000' />
+            </Text3D>
+        </mesh>
+    )
+}
+
+
+//smokeオブジェクトをキャンバスに適用する
 const ThreeSample = () => {
     const cloudParticles = []
         for (let p = 0; p < 50; p++) {
@@ -112,8 +108,9 @@ const ThreeSample = () => {
           distance={500}
           decay={1.5}
         />
+        <Texts text="F" position={[0, 0, 1]} />
         <Suspense fallback={null}>
-            {[...Array(20)].map((_) =>
+            {[...Array(10)].map((_) =>
                 <Cloud position={[Math.random()*3, Math.random()*3 , Math.random()*2]} rotationZ={Math.random()*Math.PI}/>
             )}
         </Suspense>
