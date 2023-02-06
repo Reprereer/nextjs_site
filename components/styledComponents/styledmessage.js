@@ -7,7 +7,8 @@ export const StyledMessage = styled.h3`
         text-align: center;
         font-size: ${theme.fonts.size.base};
         overflow-wrap: break-word;
-        padding-bottom: 1%;
+        padding-top: 2%;
+        padding-bottom: 5%;
         padding-left: 8%;
         padding-right: 8%;
     `}

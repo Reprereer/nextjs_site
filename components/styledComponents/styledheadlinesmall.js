@@ -6,6 +6,7 @@ const StyledHeadlineSmall = styled.h3`
         color: ${theme.colors.black};
         text-align: center;
         font-size: ${theme.fonts.size.lg};
+        margin-bottom: 3%;
     `}
     ${({ theme }) => theme.breakpoint.media.md`
         font-size: ${theme.fonts.size.xl};

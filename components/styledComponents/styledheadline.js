@@ -6,6 +6,8 @@ const StyledHeadline = styled.h2`
         color: ${theme.colors.black};
         text-align: center;
         font-size: ${theme.fonts.size.xl};
+        padding-top: 5%;
+        padding-bottom: 3%;
     `}
     ${({theme}) => theme.breakpoint.media.md`
         font-size: ${theme.fonts.size.xl2};

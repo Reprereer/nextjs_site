@@ -4,10 +4,8 @@ import styled from 'styled-components'
 const StyledContentBox = styled.div`
     ${({ theme }) => theme.breakpoint.media.base`
         display: flex;
-        gap: 5%;
-        padding-bottom: 1%;
         padding-left: 5%;
-        padding-right: 6%;
+        padding-right: 5%;
         align-items: center;
         justify-content: center;
         flex-direction: column;

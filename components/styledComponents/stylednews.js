@@ -9,6 +9,8 @@ const StyledNews = styled.div`
   justify-content: center;
   column-gap: 10px;
   background-color: #ffffff;
+  margin-top: 1%;
+  margin-bottom: 1%;
   margin-left: 4%;
   margin-right: 5%;
 `
