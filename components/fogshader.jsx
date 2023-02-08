@@ -1,20 +1,22 @@
-import { useFrame, Canvas } from '@react-three/fiber'
+import { useFrame, extend } from '@react-three/fiber'
 import React, {useRef, VFC, Suspense, useMemo } from 'react'
 import * as THREE from 'three'
-import { useTextureLoader } from '@react-three/drei'
+import { useTexture } from '@react-three/drei'
 import { Object3D } from 'three'
+import cloudImg from './images/smoke2.png'
+extend(THREE)
 
-function cloud () {
+const Cloud = () => {
     const tempObject = useMemo(() => new Object3D(), [])
     const ref = useRef()
-    const texture = useTextureLoader(cloudImg)
+    const texture = useTexture(cloudImg)
 
     const particles = useMemo(() => {
-        const cloudParticles = []
-        for(let p=0; p<50; p++){
+    const cloudParticles = []
+        for (let p = 0; p < 50; p++) {
             const positionX = Math.random() * 800 - 400
             const positionZ = Math.random() * 500 - 500
-            const rotationZ = Math.random() * Math.PI
+            const rotationZ = Math.random() * 2 * Math.PI
 
             cloudParticles.push({
                 positionX,
@@ -22,8 +24,8 @@ function cloud () {
                 rotationZ,
             })
         }
-        return cloudParticles
-    }, [])
+    return cloudParticles
+    },[])
 
     useFrame((state) => {
         particles.forEach((particle, i) => {
@@ -36,7 +38,7 @@ function cloud () {
         particles.forEach((particle) => (particle.rotationZ -= 0.001))
         ref.current.instanceMatrix.needsUpdate = true
     })
-
+    
     const material = useMemo(
         () => 
         new THREE.RawShaderMaterial({
@@ -58,22 +60,20 @@ function cloud () {
     }),
     []
     )
-    
-    useFrame(({ clock }) => {
-        material.uniforms.u_time.value = clock.getElapsedTime()
-    })
 
     return (
+        <mesh>
         <instancedMesh ref={ref} args={[null, null, 40]}>
-            <planeBufferGeomert attach="geometry" args={[500, 500]} />
+            <planeBufferGeomerty attach="geometry" args={[500, 500]} />
             <meshLambertMaterial
                 attach="material"
-                map={texture}
+                texture={texture}
                 depthWrte={false}
                 transparent
                 opacity={0.55}
             />
         </instancedMesh>
+        </mesh>
     )
 }
 
@@ -157,3 +157,5 @@ const fragmentShader =`
         gl_FragColor = vec4(color, opacity);
     }
 `
+
+export default Cloud

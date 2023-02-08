@@ -1,9 +1,10 @@
 import React, { Suspense, useRef, useMemo } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Object3D } from 'three'
+import { AdditiveBlending, Object3D } from 'three'
 import { useTexture, Text3D } from '@react-three/drei'
 import styles from '../styles/Three.module.css'
 import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json'
+import * as THREE from 'three'
 
 //smokeを作成する
 const Cloud = ({ position, rotationZ}) => {
@@ -73,42 +74,10 @@ const ThreeSample = () => {
         }
 
     return (
-        <div style={{width: "100vw", height:"100vh"}}>
+        <div style={{width: "100vw", height:"90vh"}}>
         <Canvas>
-            <directionalLight
-          color="#ff1100"
-          intensity={1.2}
-          position={[0, 0, 200]}
-        />
-        <directionalLight
-          color="#ff1100"
-          intensity={0.2}
-          position={[0, 0, -200]}
-          rotation={[1, 0, 0]}
-        />
-        <ambientLight color="#555555" intensity={0.5} />
-        <pointLight
-          color="#d40027"
-          intensity={30}
-          position={[-200, 0, -40]}
-          distance={500}
-          decay={1.5}
-        />
-        <pointLight
-          color="#d8547e"
-          intensity={30}
-          position={[100, 0, -40]}
-          distance={500}
-          decay={1}
-        />
-        <pointLight
-          color="#ff0048"
-          intensity={30}
-          position={[300, 0, -50]}
-          distance={500}
-          decay={1.5}
-        />
-        <Texts text="F" position={[0, 0, 1]} />
+            
+        <Texts text=" " position={[0, 0, 1]} />
         <Suspense fallback={null}>
             {[...Array(10)].map((_) =>
                 <Cloud position={[Math.random()*3, Math.random()*3 , Math.random()*2]} rotationZ={Math.random()*Math.PI}/>
